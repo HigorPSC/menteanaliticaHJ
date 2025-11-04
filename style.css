@@ -1,0 +1,213 @@
+/* PALETA DE CORES */
+:root {
+    --primary-color: #1C3A5E;   /* Azul Escuro (Cor Principal/Header) */
+    --secondary-color: #121212; /* Preto Quase Pura (Background Principal) */
+    --accent-color: #4D9FFF;    /* Azul Ciano (Destaque/Botões/Links) */
+    --text-light: #F0F0F0;      /* Branco Suave (Texto Principal) */
+    --text-dark: #AAAAAA;       /* Cinza Claro (Texto Secundário) */
+    --card-bg: #222222;         /* Cinza Escuro (Fundo de Cartões) */
+}
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin: 0;
+    float: left;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* NAVEGAÇÃO */
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* SEÇÕES DE CONTEÚDO GERAL */
+.content-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.secondary-bg {
+    background-color: var(--card-bg); /* Fundo mais escuro para contraste */
+}
+
+/* SEÇÃO HERO (INÍCIO) */
+.hero {
+    background: var(--secondary-color);
+    padding: 100px 0;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto 40px;
+    color: var(--text-dark);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #6AAFFF; /* Tom mais claro do azul para hover */
+}
+
+/* LISTAGEM DE ARTIGOS/FILMES */
+.article-list, .movie-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para ser responsivo */
+}
+
+article, .movie-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    border-left: 5px solid var(--accent-color);
+}
+
+article h3, .movie-card h4 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+/* LISTA DE ESTUDOS */
+#estudos ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#estudos ul li {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+/* REDES SOCIAIS */
+.social-links a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE BÁSICA */
+@media (max-width: 768px) {
+    header h1, nav {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .article-list, .movie-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    article, .movie-card {
+        min-width: 90%;
+    }
+}
